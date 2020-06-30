@@ -3,7 +3,6 @@ let ctx = cvs.getContext("2d");
 
 let AI = false
 
-
 /*Create an empty board
   If index i is null, there is no piece there
   If index i is true, the player/AIs piece is there
@@ -32,8 +31,6 @@ let tie = 0
 
 draw();
 
-
-
 function draw() {
     ctx.stroke();
     ctx.fillStyle = "#ffffff";
@@ -41,7 +38,6 @@ function draw() {
 
     //Draws board with all the pieces
     drawBoard()
-
 
     // Player vs AI mechanics
     if (!AI) {
@@ -52,7 +48,7 @@ function draw() {
             makeMove(false, moveAI) // The AI makes the move
             turn = false // Turn is false, this allows the player to make a move and it prevents the AI from making an additional move
         }
-        if (!turn && priorBoard != null){
+        if (!turn && priorBoard != null) {
             showValues(priorBoard) // Displays the Q values
         }
     }
@@ -101,7 +97,6 @@ function draw() {
             document.getElementById("Generation").value = "A.I Generation: " + generation
         }
     }
-
 
     ctx.restore();
     requestAnimationFrame(draw);
@@ -402,28 +397,28 @@ function trainAI() {
     hasAIBeenTrained = true
 }
 
-function enableValues(){
-    if (document.getElementById("showVal").value == "Show Values"){
+function enableValues() {
+    if (document.getElementById("showVal").value == "Show Values") {
         show = true
         document.getElementById("showVal").value = "Hide Values"
-    }else{
+    } else {
         show = false
         document.getElementById("showVal").value = "Show Values"
     }
 }
 
-function showValues(board){
-    if (show){
-        ctx.fillStyle =  "#2d3e52";
-        let fontSize = cvs.width/35
-        ctx.font = fontSize+"px Arial";
+function showValues(board) {
+    if (show) {
+        ctx.fillStyle = "#2d3e52";
+        let fontSize = cvs.width / 35
+        ctx.font = fontSize + "px Arial";
 
 
-        for (let r = 1; r<4; r++){
-            for (let c = 1; c<4; c++){
-                let qValue = (("          ") + (qTable[board][c-1][r-1]+"").slice(0,9)).slice(-9)
+        for (let r = 1; r < 4; r++) {
+            for (let c = 1; c < 4; c++) {
+                let qValue = (("          ") + (qTable[board][c - 1][r - 1] + "").slice(0, 9)).slice(-9)
 
-                ctx.fillText(qValue, r*(cvs.width/3)  - 150, c*(cvs.height/3) - 25);
+                ctx.fillText(qValue, r * (cvs.width / 3) - 150, c * (cvs.height / 3) - 25);
 
             }
         }
