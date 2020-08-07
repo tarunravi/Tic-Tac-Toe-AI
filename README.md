@@ -3,7 +3,7 @@ In this personal project, I designed an AI to learn how to play the popular game
 This project has two primary components: Building the Tic Tac Toe game and adding the Tic Tac Toe AI
 
 ## Play/Train The AI
-https://myworldrules.github.io/TicTacToeAI/
+https://tarunravi.tech/Tic-Tac-Toe-AI/
 
 ## Playing the Game
 Initially, the AI is in generation 0, meaning the AI will just randomly move around.
